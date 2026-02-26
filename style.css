@@ -85,3 +85,30 @@ p{
 .contact a{
     text-decoration: none;
 }
+
+.arts-container{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: left;
+}
+
+.arts-container ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.arts-container li{
+    list-style: none;
+    display: inline;
+}
+
+.arts-container a{
+    text-decoration: none;
+}
+
+.arts{
+    margin-right: 5px;
+    width: 300px;
+}
