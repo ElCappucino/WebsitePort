@@ -1,7 +1,11 @@
 body{
     margin: 0px;
+    margin-bottom: 100px;
     font-family: 'Space Mono', monospace;
+    background-color: #024663;
+    color: hsl(212, 64%, 87%);
 }
+
 .wrapper {
     width: min(1400px, 100%);
     margin: 0px auto;
@@ -28,14 +32,16 @@ p{
     overflow: hidden;
 }
 .navbar a{
-    color: hsl(0, 0%, 25%);
+    color: hsl(212, 52%, 78%);
     text-decoration: none;
     padding: 15px;
     display: block;
     text-align: center;
+    transition: 150ms ease;
 }
 .navbar a:hover{
-    color: hsl(0, 0%, 50%);
+    color: hsl(0, 0%, 77%);
+    transform: scale(1.2)
 }
 
 .navbar li{
@@ -62,6 +68,11 @@ p{
 .socials {
     margin-right: 5px;
     width: 30px;
+    transition: 150ms ease;
+}
+
+.socials:hover{
+    transform: scale(1.2)
 }
 
 .contact{
@@ -111,4 +122,110 @@ p{
 .arts{
     margin-right: 5px;
     width: 300px;
+}
+.arts-huge{
+    margin-right: 5px;
+    width: 615px;
+}
+
+.games-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+.games-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+/* Background image */
+.games-bg {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Overlay container */
+.games-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Left and right split */
+.overlay-left,
+.overlay-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+/* Left side */
+.overlay-left {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Right side */
+.overlay-right {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Hover effects */
+.games-preview:hover .games-overlay {
+    opacity: 1;
+}
+
+.games-preview:hover .games-bg {
+    transform: scale(1.05);
+}
+
+/* Optional hover brightness */
+.overlay-left:hover,
+.overlay-right:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.games-link{
+    text-align: center;
+    display: block;
+    margin-top: 8px;
+    
+    
+}
+
+.devlog-main {
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+.devlog-img{
+    width: 900px;           
+    height: auto;          
+    border-radius: 10px;  
+}
+
+.devlog-img-small{
+    width: 300px;           
+    height: auto;          
+    border-radius: 10px;  
+}
+
+.devlog-img-medium{
+    width: 500px;           
+    height: auto;          
+    border-radius: 10px;  
 }

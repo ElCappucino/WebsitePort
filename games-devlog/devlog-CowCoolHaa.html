@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunyapon Chaiongkarn</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../games.html">games</a></li>
+                    <li><a href="../art.html">art</a></li>
+                    <li><a href="../blog.html">blog</a></li>
+                    <li><a href="../about.html">about</a></li>
+                </ul>
+            </nav>
+
+            <div class="devlog-main">
+                <h3>Process of making : CowCoolHaa GaHenChop</h3>
+
+                <p>
+                In every year, I usually attended in on-site Global Game Jam. This year (2026) is the first year that I decided to attended online.
+                Because on-site registration fulled in less than a week. I'm glad that there is a lot of people interested in attending the event, but I'm also hope that I've seen it sooner.
+                </p>
+
+                <a target="_blank" href="../images/lastyear-GGJ.jpg">
+                    <img class="devlog-img" src="../images/lastyear-GGJ.jpg" alt="last year">
+                </a>
+
+                <p>
+                When the theme "Mask" is announced. We decided to make a game that focusing on disguise yourself through something.
+                And out of nowhere, We want to parodied the current Thailand's election event. It was just for fun at that moment, 
+                </p>
+
+                <a target="_blank" href="../images/CowCoolHaa_brainstorm.png">
+                    <img class="devlog-img" src="../images/CowCoolHaa_brainstorm.png" alt="last year">
+                </a>
+                <p><i>Some parts of the brainstorm session...</i></p>
+
+                <p>
+                The main features in this game is to disguise by plug random things that player can found in front of election area
+                on player's face. this part can made inside code by calculating the normals on the player's surface and rotate the object using that value.
+                </p>
+
+                <a target="_blank" href="../images/cowcoolhaa-normal.gif">
+                    <img class="devlog-img-medium" src="../images/cowcoolhaa-normal.gif" alt="normal">
+                </a>
+
+                <p>
+                The next part is to detect where the object is plugged in (ex. hair, nose, mouth, etc.)
+                This part we use normal collision in each area to detect it.
+                </p>
+
+                <p>
+                And this is the part where I messed up. I responsible for merging all codes and needs to check the data transfer
+                over scenes. in the last hour of jam, The data transter doesn't work so the appearance detail is not updated.
+                at the end, the gameplay is working, but the data is still not transfer and the game force player to lose even though you have the win condition.
+                </p>
+
+                <a target="_blank" href="../images/cowcoolhaa-gameplay1.gif">
+                    <img class="devlog-img-medium" src="../images/cowcoolhaa-gameplay1.gif" alt="gameplay1">
+                </a>
+
+                <p><i>appearance target doesn't update...</i></p>
+
+                <p>
+                So the event is ended. The problem is still there. But I'm not done with that part so I started to find the problem inside code after the jam ended.
+                </p>
+
+                <p>
+                And I found it. We use json to save the data, but it requires the data to be struct/class only. I saved the data using only integer. 
+                And it is just it. OH MY GOD. PLEASE DON'T MESS UP LIKE I DID.
+                </p>
+
+                <p><i>What you should do...</i></p>
+
+                <a target="_blank" href="../images/CowCoolHaa_save1.png">
+                    <img class="devlog-img-medium" src="../images/CowCoolHaa_save1.png" alt="gameplay1">
+                </a>
+                
+                <p><i>What you shouldn't do...</i></p>
+                
+                <a target="_blank" href="../images/CowCoolHaa_save2.png">
+                    <img class="devlog-img-medium" src="../images/CowCoolHaa_save2.png" alt="gameplay1">
+                </a>
+
+                
+            </div>
+        </div>
+    </body>
+</html>

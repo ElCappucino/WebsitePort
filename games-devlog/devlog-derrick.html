@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunyapon Chaiongkarn</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../games.html">games</a></li>
+                    <li><a href="../art.html">art</a></li>
+                    <li><a href="../blog.html">blog</a></li>
+                    <li><a href="../about.html">about</a></li>
+                </ul>
+            </nav>
+
+            <div class="devlog-main">
+                <h3>Process of making : Derrick</h3>
+
+                <p>
+                This is the work that I made while attended in university's game jam. I teamed up with my group of friends that I'd never working with before.
+                it is such a long time I changed the group so the feeling is fresh and new. 
+                </p>
+
+                <a target="_blank" href="../images/team-derrick.png">
+                    <img class="devlog-img-small" src="../images/team-derrick.png" alt="profile">
+                </a>
+
+                <p>
+                There is no specific theme. The only limitation is the time period of 1 mounth before the semester started. We had not much idea in mind, so
+                we choose to do the simple rogue-like arcade aerial shooting game. Player will play as a plane, dodge the bullet, and shoot the enemy while controlling the aerial movement.
+                </p>
+
+                <a target="_blank" href="../images/derrick-inspiration.png">
+                    <img class="devlog-img" src="../images/derrick-inspiration.png" alt="profile">
+                </a>
+                <p>
+                    <i>Huge inspiration from Wind Runners</i>
+                </p>
+                <p>
+                The challenge part in this project is to simulate the plane movement when turning left and right. Because the perspective is side-scroll 2D, the control is also 2D.
+                The plane needs to slowly tilted while turn to the target rotation. 
+                </p>
+
+                <p>
+                So the working process is 
+                <br>1. Update the velocity using the current facing direction
+                <br>2. Update the facing direction by smoothdamp the current facing direction and current input direction.
+                <br>3. Update the visual roll using current rotation
+                </p>
+
+                <a target="_blank" href="../images/derrick_code1.png">
+                    <img class="devlog-img" src="../images/derrick_code1.png" alt="profile">
+                </a>
+
+                <p>
+                The "Update visual roll" part is very important because it makes the plane movement looks more smooth and similar to most aerial games
+                </p>
+
+                <a target="_blank" href="../images/plane2_exampleClip.gif">
+                    <img class="devlog-img" src="../images/plane2_exampleClip.gif" alt="profile">
+                </a>
+
+                <p>
+                The rest of development process is not much new. I spent a lot of time to make the game feel similar to Wind Runners and
+                forgot that we need to add the rogue-like elements (and also sounds as well). Apart from the crunch part, it is a fun project
+                and I feel like there is a huge upgrade for me in terms of the speed I can code and how much game feel element I added in this game.
+                </p>
+
+            </div>
+        </div>
+    </body>
+</html>
