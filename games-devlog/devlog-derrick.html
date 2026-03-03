@@ -207,10 +207,10 @@
 
         <script>
             window.onload = function() {
-              gsap.from(".devlog-main > *", {
+              gsap.to(".devlog-main > *", {
                 duration: 0.8,
-                opacity: 0,
-                y: 30,
+                opacity: 1,
+                y: 0,
                 stagger: 0.1,
                 ease: "power3.out"
               });
