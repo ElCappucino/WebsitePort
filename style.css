@@ -54,6 +54,7 @@ p{
     align-items: center;    
     gap: 30px;              
     margin-top: 20px;
+    opacity: 0;
 }
 
 .profile-img {
