@@ -273,3 +273,25 @@ p{
     margin: 0;
     padding: 0;
 }
+
+.badge-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 12px 0;
+    margin-bottom: 32px;
+}
+.technical-experience h1{
+    text-align: left;
+}
+.badge-list .badge{
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #000;
+    list-style: none;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #9ce1ff;
+    color: #9ce1ff;
+    white-space: nowrap;
+    margin: 0 4px 16px;
+}
