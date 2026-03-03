@@ -21,73 +21,83 @@
 
             <main>
                 <div class="arts-container">
-                        <ul>
-                            <li>
-                                <a href="images/arts/coffee-gif.gif" target="_blank">
-                                    <img class="arts-huge" src="images/arts/coffee-gif.gif">
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="images/arts/gamedevgirl-ba.png" target="_blank">
-                                    <img class="arts-huge" src="images/arts/gamedevgirl-ba.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="images/arts/aatrox.png" target="_blank">
-                                    <img class="arts" src="images/arts/aatrox.png">
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="images/arts/akali.png" target="_blank">
-                                    <img class="arts" src="images/arts/akali.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="images/arts/akshan.png" target="_blank">
-                                    <img class="arts" src="images/arts/akshan.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="images/arts/alistar.png" target="_blank">
-                                    <img class="arts" src="images/arts/alistar.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="images/arts/bard.png" target="_blank">
-                                    <img class="arts" src="images/arts/bard.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="images/arts/pochama.png" target="_blank">
-                                    <img class="arts" src="images/arts/pochama.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="images/arts/chandelure.png" target="_blank">
-                                    <img class="arts" src="images/arts/chandelure.png">
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="images/arts/halloween-poke.png" target="_blank">
-                                    <img class="arts" src="images/arts/halloween-poke.png">
-                                </a>
-                            </li>
-
-                            
-
-                            <li>
-                                <a href="images/arts/whaleshark.png" target="_blank">
-                                    <img class="arts" src="images/arts/whaleshark.png">
-                                </a>
-                            </li>
-
-                            
-                        </ul>
-                    </div>
+                    <ul>
+                        <li>
+                            <a href="images/arts/coffee-gif.gif" target="_blank">
+                                <img class="arts-huge" src="images/arts/coffee-gif.gif">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/gamedevgirl-ba.png" target="_blank">
+                                <img class="arts-huge" src="images/arts/gamedevgirl-ba.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/aatrox.png" target="_blank">
+                                <img class="arts" src="images/arts/aatrox.png">
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="images/arts/akali.png" target="_blank">
+                                <img class="arts" src="images/arts/akali.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/akshan.png" target="_blank">
+                                <img class="arts" src="images/arts/akshan.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/alistar.png" target="_blank">
+                                <img class="arts" src="images/arts/alistar.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/bard.png" target="_blank">
+                                <img class="arts" src="images/arts/bard.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/pochama.png" target="_blank">
+                                <img class="arts" src="images/arts/pochama.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/chandelure.png" target="_blank">
+                                <img class="arts" src="images/arts/chandelure.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="images/arts/halloween-poke.png" target="_blank">
+                                <img class="arts" src="images/arts/halloween-poke.png">
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="images/arts/whaleshark.png" target="_blank">
+                                <img class="arts" src="images/arts/whaleshark.png">
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
             </main>
         </div>
     </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+
+
+    <script>
+        window.onload = function() {
+        gsap.to(".arts-container li", {
+            duration: 0.8,
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+};
+    </script>
 </html>

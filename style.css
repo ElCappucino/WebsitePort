@@ -99,21 +99,26 @@ p{
 }
 
 .arts-container{
+    
     width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: left;
 }
 
-.arts-container ul{
+.arts-container ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap; 
 }
 
-.arts-container li{
+.arts-container li {
     list-style: none;
-    display: inline;
+    display: inline-block;
+    opacity: 0;          
+    transform: translateY(30px); 
 }
 
 .arts-container a{
