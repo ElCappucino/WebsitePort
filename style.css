@@ -212,6 +212,12 @@ p{
     margin: 0 auto; 
 }
 
+.devlog-main ul{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+
+}
 .devlog-img{
     width: 900px;           
     height: auto;          
@@ -228,4 +234,24 @@ p{
     width: 500px;           
     height: auto;          
     border-radius: 10px;  
+}
+
+.experience-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.about,
+.project-info {
+    
+    padding: 30px;
+    background-color: #00212f;
+}
+
+.project-info-detail ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }

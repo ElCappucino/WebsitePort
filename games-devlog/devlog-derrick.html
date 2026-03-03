@@ -21,7 +21,39 @@
 
             <div class="devlog-main">
                 <h3>Process of making : Derrick</h3>
-
+                
+                <nav class="experience-grid">
+                    <nav class="about">
+                        <h3>about</h3>
+                        <p><b>"Derrick"</b> is a side-scrolling aerial combat action roguelike game where you take control of an aircraft, 
+                            fight enemies, and upgrade your way to survival. Defeat various enemies, 
+                            face massive war machines, and improve your score.
+                        </p>
+                    </nav>
+                    <nav class="project-info">
+                        <h3>Project Info</h3>
+                        <div class="project-info-detail">
+                            <ul>
+                                <li>
+                                    <img class="socials" src="../images/icon/role-white.png">
+                                    Role : Programmer
+                                </li>
+                                <li>
+                                    <img class="socials" src="../images/icon/team-white.png">
+                                    Team Size: 6
+                                </li>
+                                <li>
+                                    <img class="socials" src="../images/icon/time-white.png">
+                                    Time Period: 1 month
+                                </li>
+                                <li>
+                                    <img class="socials" src="../images/icon/tools-white.png">
+                                    Tools: Unity Engine
+                                </li>   
+                            </ul>
+                        </div>
+                    </nav>
+                </nav>
                 <p>
                 This is the work that I made while attended in university's game jam. I teamed up with my group of friends that I'd never working with before.
                 it is such a long time I changed the group so the feeling is fresh and new. 
@@ -42,13 +74,15 @@
                 <p>
                     <i>Huge inspiration from Wind Runners</i>
                 </p>
+
+                <h2>Movement</h2>
                 <p>
-                The challenge part in this project is to simulate the plane movement when turning left and right. Because the perspective is side-scroll 2D, the control is also 2D.
+                I need to write the movement that simulate the plane when turning left and right. Because the perspective is side-scroll 2D, the control is also 2D.
                 The plane needs to slowly tilted while turn to the target rotation. 
                 </p>
 
                 <p>
-                So the working process is 
+                So the movement process is 
                 <br>1. Update the velocity using the current facing direction
                 <br>2. Update the facing direction by smoothdamp the current facing direction and current input direction.
                 <br>3. Update the visual roll using current rotation
@@ -65,13 +99,80 @@
                 <a target="_blank" href="../images/plane2_exampleClip.gif">
                     <img class="devlog-img" src="../images/plane2_exampleClip.gif" alt="profile">
                 </a>
-
+                
+                <h2>Enemy</h2>
                 <p>
-                The rest of development process is not much new. I spent a lot of time to make the game feel similar to Wind Runners and
-                forgot that we need to add the rogue-like elements (and also sounds as well). Apart from the crunch part, it is a fun project
-                and I feel like there is a huge upgrade for me in terms of the speed I can code and how much game feel element I added in this game.
+                To make the enemy movement and chasing smooth, I designed enemy state to swap between each state smoothly.
                 </p>
 
+                <p><i>For your information, this code was made before I had learned about finite state machine, so the state is written in 
+                    a straightforward for loop. Please bear with it.
+                </i>
+                </p>
+
+                <a target="_blank" href="../images/derrick-enemy.png">
+                    <img class="devlog-img" src="../images/derrick-enemy.png" alt="profile">
+                </a>
+                <ul><li>Chasing state: to change the position and rotation according to player's position and shooting with cooldown.</li></ul>
+                <a target="_blank" href="../images/derrick-enemy-chase.png">
+                    <img class="devlog-img" src="../images/derrick-enemy-chase.png" alt="profile">
+                </a>
+                <ul><li>fleeing state: to move away from player and return to chase after a set duration.</li></ul>
+                <a target="_blank" href="../images/derrick-enemy-flee.png">
+                    <img class="devlog-img" src="../images/derrick-enemy-flee.png" alt="profile">
+                </a>
+
+                <p>Other enemy types such as ground enemy and boss has a similar behavior without flee state.</p>
+
+                <h2>Enemy Wave</h2>
+
+                <p>
+                In this game, enemy waves have two levels: main waves and sub waves.
+                Sub waves spawn groups of enemies repeatedly after a set amount of time.
+                Each main wave contains multiple sub waves.
+                When all sub waves in a main wave are completed, the player receives an upgrade.
+                </p>
+
+                <p>I used scriptable object to store the wave information. it is easier for designer to configurate and balancing. </p>
+                <a target="_blank" href="../images/derrick-enemy-wave.png">
+                    <img class="devlog-img" src="../images/derrick-enemy-wave.png" alt="profile">
+                </a>
+                <a target="_blank" href="../images/derrick-enemy-wave2.png">
+                    <img class="devlog-img" src="../images/derrick-enemy-wave2.png" alt="profile">
+                </a>
+                
+                <h2>Problems</h2>
+
+                <p>In this project, I tried using FMOD for surrounding sounds because I found some tutorials on it
+                    and thought that it might be good to learn new stuff.
+                </p>
+
+                <p>it quite harder to do it and use huge amount of time to learn to make the sound surrounding.</p>
+
+                <p>Also, turns out that I can easily use the Unity audio source's spatial blend to make it surround in 2D.
+                    It was quite over-engineer.
+                </p>
+
+                <a target="_blank" href="../images/derrick-sound.png">
+                    <img class="devlog-img" src="../images/derrick-sound.png" alt="profile">
+                </a>
+
+                <p>but If the next time I want to use the feature that offers in FMOD such as sound mixing or editing, I will try to use it again.</p>
+
+                <h2>What I learn in this project</h2>
+
+                <p>
+                As the only programmer on the team, I was responsible for developing every gameplay feature in this project. 
+                This gave me a valuable opportunity to learn all aspects of game development. From implementing core mechanics 
+                to solving more complex challenges without relying on tutorials, such as creating the smooth plane’s movement system 
+                and building a flexible enemy wave data configurator for designer.
+                </p>
+
+                <p>
+                Besides the technical side, this project taught me how crucial communication and scoping are in a small period of time. 
+                With a short development timeline, minor miscommunication could cause significant setbacks. 
+                I also gained experience working with the art team and teach them how to export the assets properly for unity.
+                </p>
             </div>
         </div>
     </body>
