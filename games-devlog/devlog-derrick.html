@@ -20,14 +20,14 @@
             </nav>
 
             <div class="devlog-main">
-                <h3>Process of making : Derrick</h3>
+                <h3>Process of Making: Derrick</h3>
                 
                 <nav class="experience-grid">
                     <nav class="about">
-                        <h3>about</h3>
-                        <p><b>"Derrick"</b> is a side-scrolling aerial combat action roguelike game where you take control of an aircraft, 
-                            fight enemies, and upgrade your way to survival. Defeat various enemies, 
-                            face massive war machines, and improve your score.
+                        <h3>About</h3>
+                        <p><b>"Derrick"</b> is a side-scrolling aerial combat roguelike game where you control an aircraft,
+                            fight enemies, and upgrade your way to survival. Defeat various enemy types,
+                            face massive war machines, and push your score higher.
                         </p>
                     </nav>
                     <nav class="project-info">
@@ -54,9 +54,10 @@
                         </div>
                     </nav>
                 </nav>
+
                 <p>
-                This is the work that I made while attended in university's game jam. I teamed up with my group of friends that I'd never working with before.
-                it is such a long time I changed the group so the feeling is fresh and new. 
+                This project was developed during a university game jam. I teamed up with a group of friends I had never worked with before,
+                so the experience felt fresh and exciting.
                 </p>
 
                 <a target="_blank" href="../images/team-derrick.png">
@@ -64,8 +65,9 @@
                 </a>
 
                 <p>
-                There is no specific theme. The only limitation is the time period of 1 mounth before the semester started. We had not much idea in mind, so
-                we choose to do the simple rogue-like arcade aerial shooting game. Player will play as a plane, dodge the bullet, and shoot the enemy while controlling the aerial movement.
+                There was no specific theme. The only limitation was the one-month development period before the semester began.
+                Since we didn’t have a strong concept at the start, we decided to create a simple roguelike arcade-style aerial shooter.
+                The player controls a plane, dodges bullets, and shoots enemies while managing aerial movement.
                 </p>
 
                 <a target="_blank" href="../images/derrick-inspiration.png">
@@ -77,15 +79,16 @@
 
                 <h2>Movement</h2>
                 <p>
-                I need to write the movement that simulate the plane when turning left and right. Because the perspective is side-scroll 2D, the control is also 2D.
-                The plane needs to slowly tilted while turn to the target rotation. 
+                I implemented a movement system that simulates how a plane naturally turns left and right.
+                Although the game is a 2D side-scroller, I wanted the aircraft to feel dynamic and responsive.
+                The plane gradually tilts toward its target rotation instead of snapping instantly.
                 </p>
 
                 <p>
-                So the movement process is 
-                <br>1. Update the velocity using the current facing direction
-                <br>2. Update the facing direction by smoothdamp the current facing direction and current input direction.
-                <br>3. Update the visual roll using current rotation
+                The movement process:
+                <br>1. Update velocity based on the current facing direction.
+                <br>2. Smoothly adjust the facing direction toward player input using SmoothDamp.
+                <br>3. Update the visual roll based on the current rotation.
                 </p>
 
                 <a target="_blank" href="../images/derrick_code1.png">
@@ -93,87 +96,125 @@
                 </a>
 
                 <p>
-                The "Update visual roll" part is very important because it makes the plane movement looks more smooth and similar to most aerial games
+                The "update visual roll" step is important because it makes the plane movement feel smoother
+                and more similar to modern aerial combat games.
                 </p>
 
                 <a target="_blank" href="../images/plane2_exampleClip.gif">
                     <img class="devlog-img" src="../images/plane2_exampleClip.gif" alt="profile">
                 </a>
-                
+
                 <h2>Enemy</h2>
                 <p>
-                To make the enemy movement and chasing smooth, I designed enemy state to swap between each state smoothly.
+                To make enemy movement and chasing behavior feel smooth, I designed a state-based system
+                that allows enemies to switch behaviors depending on the situation.
                 </p>
 
-                <p><i>For your information, this code was made before I had learned about finite state machine, so the state is written in 
-                    a straightforward for loop. Please bear with it.
-                </i>
-                </p>
+                <p><i>
+                This code was written before I learned about formal finite state machines,
+                so the states were handled manually inside a straightforward update loop.
+                </i></p>
 
                 <a target="_blank" href="../images/derrick-enemy.png">
                     <img class="devlog-img" src="../images/derrick-enemy.png" alt="profile">
                 </a>
-                <ul><li>Chasing state: to change the position and rotation according to player's position and shooting with cooldown.</li></ul>
+
+                <ul>
+                <li><b>Chasing State:</b> The enemy tracks the player's position, rotates toward them, and shoots with a cooldown.</li>
+                </ul>
+
                 <a target="_blank" href="../images/derrick-enemy-chase.png">
                     <img class="devlog-img" src="../images/derrick-enemy-chase.png" alt="profile">
                 </a>
-                <ul><li>fleeing state: to move away from player and return to chase after a set duration.</li></ul>
+
+                <ul>
+                <li><b>Fleeing State:</b> The enemy moves away from the player and returns to the chasing state after a set duration.</li>
+                </ul>
+
                 <a target="_blank" href="../images/derrick-enemy-flee.png">
                     <img class="devlog-img" src="../images/derrick-enemy-flee.png" alt="profile">
                 </a>
 
-                <p>Other enemy types such as ground enemy and boss has a similar behavior without flee state.</p>
+                <p>
+                Other enemy types, such as ground enemies and the boss, use similar behavior but without the fleeing state.
+                </p>
 
                 <h2>Enemy Wave</h2>
 
                 <p>
-                In this game, enemy waves have two levels: main waves and sub waves.
-                Sub waves spawn groups of enemies repeatedly after a set amount of time.
+                Enemy waves are structured in two layers: main waves and sub waves.
+                Sub waves repeatedly spawn groups of enemies at fixed intervals.
                 Each main wave contains multiple sub waves.
-                When all sub waves in a main wave are completed, the player receives an upgrade.
+                Once all sub waves in a main wave are completed, the player receives an upgrade.
                 </p>
 
-                <p>I used scriptable object to store the wave information. it is easier for designer to configurate and balancing. </p>
+                <p>
+                I used Scriptable Objects to store wave data, making it easier for designers to configure and balance enemy patterns.
+                </p>
+
                 <a target="_blank" href="../images/derrick-enemy-wave.png">
                     <img class="devlog-img" src="../images/derrick-enemy-wave.png" alt="profile">
                 </a>
+
                 <a target="_blank" href="../images/derrick-enemy-wave2.png">
                     <img class="devlog-img" src="../images/derrick-enemy-wave2.png" alt="profile">
                 </a>
-                
+
                 <h2>Problems</h2>
 
-                <p>In this project, I tried using FMOD for surrounding sounds because I found some tutorials on it
-                    and thought that it might be good to learn new stuff.
+                <p>
+                In this project, I experimented with FMOD for environmental sound because I wanted to learn something new.
                 </p>
 
-                <p>it quite harder to do it and use huge amount of time to learn to make the sound surrounding.</p>
+                <p>
+                However, it was more complex than expected and required a significant amount of time to implement properly.
+                </p>
 
-                <p>Also, turns out that I can easily use the Unity audio source's spatial blend to make it surround in 2D.
-                    It was quite over-engineer.
+                <p>
+                Later, I realized that Unity’s built-in Audio Source with spatial blend settings
+                could achieve a similar 2D surround effect much more simply.
+                In hindsight, using FMOD for this case was somewhat over-engineered.
                 </p>
 
                 <a target="_blank" href="../images/derrick-sound.png">
                     <img class="devlog-img" src="../images/derrick-sound.png" alt="profile">
                 </a>
 
-                <p>but If the next time I want to use the feature that offers in FMOD such as sound mixing or editing, I will try to use it again.</p>
-
-                <h2>What I learn in this project</h2>
-
                 <p>
-                As the only programmer on the team, I was responsible for developing every gameplay feature in this project. 
-                This gave me a valuable opportunity to learn all aspects of game development. From implementing core mechanics 
-                to solving more complex challenges without relying on tutorials, such as creating the smooth plane’s movement system 
-                and building a flexible enemy wave data configurator for designer.
+                That said, if I need more advanced features such as sound mixing or detailed audio control in future projects,
+                I would consider using FMOD again.
                 </p>
 
-                <p>
-                Besides the technical side, this project taught me how crucial communication and scoping are in a small period of time. 
-                With a short development timeline, minor miscommunication could cause significant setbacks. 
-                I also gained experience working with the art team and teach them how to export the assets properly for unity.
+                <h2>What I Learned</h2>
+
+                <p> 
+                    As the only programmer on the team, I was responsible for developing every gameplay feature in this project. 
+                    This gave me a valuable opportunity to learn all aspects of game development. 
+                    From implementing core mechanics to solving more complex challenges without relying on tutorials, 
+                    such as creating the smooth plane’s movement system and building a flexible enemy wave data configurator for designer. 
+                </p> 
+                <p> 
+                    Besides the technical side, this project taught me how crucial communication and scoping 
+                    are in a small period of time. With a short development timeline, 
+                    minor miscommunication could cause significant setbacks. 
+                    I also gained experience working with the art team and teach them how to export 
+                    the assets properly for unity. 
                 </p>
             </div>
         </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+
+        <script>
+            window.onload = function() {
+                gsap.to(".devlog-main > *", {
+                    duration: 0.8,
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                });
+            };
+        </script>
     </body>
 </html>

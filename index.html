@@ -67,4 +67,18 @@
             </div>
         </div>
     </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+
+        <script>
+            window.onload = function() {
+                gsap.to(".games-grid-container", {
+                    duration: 0.8,
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    ease: "power3.out"
+                });
+            };
+        </script>
 </html>

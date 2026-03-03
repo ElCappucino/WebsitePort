@@ -7,6 +7,7 @@ body{
 }
 
 .wrapper {
+    
     width: min(1400px, 100%);
     margin: 0px auto;
 }
@@ -135,6 +136,12 @@ p{
     gap: 20px;
     margin-bottom: 25px;
 }
+
+.games-grid-container {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
 .games-preview {
     position: relative;
     width: 100%;
@@ -234,6 +241,10 @@ p{
     width: 500px;           
     height: auto;          
     border-radius: 10px;  
+}
+
+.devlog-main > * {
+    opacity: 0;
 }
 
 .experience-grid{
