@@ -206,15 +206,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
 
         <script>
-            window.onload = function() {
-              gsap.to(".devlog-main > *", {
-                duration: 0.8,
-                opacity: 1,
-                y: 0,
-                stagger: 0.1,
-                ease: "power3.out"
-              });
-            };
+            document.addEventListener("DOMContentLoaded", (event) => {
+                gsap.to(".devlog-main > *", {
+                    duration: 0.8,
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    ease: "power3.out"
+                });
+            });
         </script>
     </body>
 </html>
