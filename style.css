@@ -46,6 +46,10 @@ p{
 }
 
 .navbar li{
+    float: right;
+}
+
+.navbar h2{
     float: left;
 }
 
