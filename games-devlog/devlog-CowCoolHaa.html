@@ -128,4 +128,43 @@
             </div>
         </div>
     </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+
+
+    <script>
+        window.addEventListener("load", function () {
+
+            gsap.to(".wrapper", {
+                duration: 0.8,
+                opacity: 1,
+                y: 0,
+                ease: "power3.out"
+            });
+        
+            document.querySelectorAll("a").forEach(link => {
+            
+                if (link.target === "_blank") return;
+            
+                link.addEventListener("click", function(e){
+                
+                    if (link.hostname !== window.location.hostname) return;
+                
+                    e.preventDefault();
+                    const url = link.href;
+                
+                    gsap.to(".wrapper", {
+                        duration: 0.5,
+                        opacity: 0,
+                        y: -30,
+                        ease: "power2.in",
+                        onComplete: () => window.location = url
+                    });
+                
+                });
+            
+            });
+        
+        });
+    </script>
 </html>

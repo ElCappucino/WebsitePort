@@ -7,7 +7,8 @@ body{
 }
 
 .wrapper {
-    
+    opacity:0;
+    transform:translateY(30px);
     width: min(1400px, 100%);
     margin: 0px auto;
 }
@@ -58,7 +59,6 @@ p{
     align-items: center;    
     gap: 30px;              
     margin-top: 20px;
-    opacity: 0;
 }
 
 .profile-img {
@@ -121,8 +121,7 @@ p{
 
 .arts-container li {
     list-style: none;
-    display: inline-block;
-    opacity: 0;          
+    display: inline-block; 
     transform: translateY(30px); 
 }
 
@@ -148,7 +147,6 @@ p{
 }
 
 .games-grid-container {
-    opacity: 0;
     transform: translateY(30px);
 }
 
