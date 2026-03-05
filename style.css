@@ -251,10 +251,6 @@ p{
     border-radius: 10px;  
 }
 
-.devlog-main > * {
-    opacity: 0;
-    transform: translateY(20px);
-}
 
 .experience-grid{
     display: grid;
